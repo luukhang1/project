@@ -1,0 +1,35 @@
+*{
+    font-family: 'GoogleSans';
+    font-weight: 400;
+    box-sizing: border-box;
+}
+.table-bordered {
+    border: 1px solid #f4f4f4;
+}
+.table-bordered > thead{
+
+    background-color: #0b93d5;
+}
+#toast{
+    width: 250px !important;
+    animation-name: myAnimation;
+    animation-duration: 1s;
+}
+ #toast::after{
+    width: 5px;
+    content: X !important;
+}
+
+@keyframes myAnimation {
+    from{
+        opacity: 0;
+      }
+      to{
+        opacity: 2;
+      }
+}
+.btn{
+    height: 40px;
+}
+
+    
