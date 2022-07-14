@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Title</title>
+    <title>Quản Lý Nhân Viên</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,7 +15,7 @@
     
     <!-- (Optional) Use CSS or JS implementation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./Css/styles.css">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
   </head>
@@ -23,46 +23,72 @@
     <main>
         <div class=" " style="display:flex; flex-direction: column;">
             <div style="display: flex;">
-                <div style="width: 30vh; min-height: 80vh; border: 1px solid;">
+                <div style="width: 20%; min-height: 90%; border: 1px solid;">
                     <nav id="navbar-example3" class=" navbar-dark bg-dark flex-column  align-items-stretch p-3" style="height: 100%;">
-                        <a class="navbar-brand " href="#" >Dash Board</a>
+                        <a class="navbar-brand " href="#" ><i class="fa fa-face-grin-wide"></i>Dash Board</a>
                           <nav class="nav nav-pills flex-column">
-                            <a class="nav-link ms-3 my-1 bg-gradient" href="#item-1-1" style="color: white;"><i class="fa  fa-list-squares"></i> Tong quan</a>
-                            <a class="nav-link ms-3 my-1 bg-gradient" href="#item-1-1" style="color: white;"><i class="fa  fa-list-squares"></i> Bao cao </a>
-                            <a class="nav-link ms-3 my-1 bg-gradient" href="#item-1-1" style="color: white;"><i class="fa  fa-list-squares"></i> Mua hang</a>
-                            <a class="nav-link ms-3 my-1 bg-gradient" href="#item-1-1" style="color: white;"><i class="fa  fa-list-squares"></i> Danh sach nhan vien</a>
-                            <a class="nav-link ms-3 my-1 bg-gradient" href="#item-1-1" style="color: white;"><i class="fa  fa-list-squares"></i> Thiet lap he thong</a>
+                            <a class="nav-link ms-3 my-1 bg-gradient" href="#item-1-1" style="color: white;"><i class="fa  fa-bar-chart"></i> Tổng quan</a>
+                            <a class="nav-link ms-3 my-1 bg-gradient" href="#item-1-1" style="color: white;"><i class="fa  fa-bars-progress"></i> Báo cáo </a>
+                            <a class="nav-link ms-3 my-1 bg-gradient" href="#item-1-1" style="color: white;"><i class="fa  fa-cart-plus"></i> Mua hàng</a>
+                            <a class="nav-link ms-3 my-1 bg-gradient" href="#item-1-1" style="color: white;"><i class="fa  fa-people-group"></i> Danh mục nhân viên</a>
+                            <a class="nav-link ms-3 my-1 bg-gradient" href="#item-1-1" style="color: white;"><i class="fa  fa-gear"></i> Thiết lập hệ thống</a>
                         </nav>
                     </nav>
                 </div>
-                <div style="width: 100%;">
+                <div style="width: 80%;">
                     <div>
                         <nav class="navbar navbar-expand-lg navbar-light bg-light">
                             <div class="container-fluid">
-                            <a class="navbar-brand" href="#">Nha hang bien dong</a>
+                            <a class="navbar-brand" href="#">Nhà hàng biển đông</a>
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
                             <div class="collapse navbar-collapse" id="navbarText">
                                 <span class="navbar-text">
-                                Navbar text with an inline element
                                 </span>
                             </div>
                             </div>
                         </nav>
                     </div>
 
-                    <div style="overflow: auto; border: 1px solid; width: 100%;max-height: 80vh; padding: 20px;" >
+                    <div style="overflow: auto; border: 1px solid; width: 100%;max-height: 100%; padding: 20px;" >
                         <h1 style="font-size: 18pt;">
-                            QUAN LY
-                            <small>Nhan Vien</small>
+                            QUẢN LÝ
+                            <small>Nhân Viên</small>
                         </h1>
         
                         <div class="card">
     
                             <div class="" style="display: flex; flex-direction: row-reverse;padding: 20px;">
                                 <div >
-                                    <button class="btn btn-primary"  style="background-color: #019160; border: none;" data-bs-toggle="modal" data-bs-target="#modelId" onclick="addItem()"><i class="fa fa-user-edit"></i> Them Nhan Vien</button>
+                                    <button class="btn btn-primary"  style="background-color: #019160; border: none;" data-bs-toggle="modal" data-bs-target="#modelId" onclick="addItem()"><i class="fa fa-user-edit"></i> Thêm Nhân Viên</button>
+                                </div>
+                            </div>
+                            <div class="" style="display: flex; flex-direction: row-reverse;padding-right: 20px;">
+                                <div style="display: flex;">
+                                    <div 
+                                    style="width: 40px;height: 40px;
+                                     background-color: rgb(138, 141, 141); 
+                                      text-align: center; display: flex;
+                                      place-content: center; 
+                                      border-radius: 2px;
+                                      border: 0.5px solid ;">
+                                        <i class="fa fa-trash" style="width: 30px;height: 30px; color:red; align-self: center;"></i>
+                                    </div>
+                                    <div style="width: 40px;height: 40px; 
+                                    background-color: rgb(138, 141, 141); 
+                                    text-align: center; display: flex;
+                                    place-content: center; border-radius: 2px;
+                                    border: 0.5px solid ;">
+                                        <i class="fa fa-file-circle-plus" style="width: 30px;height: 30px;  align-self: center;"></i>
+                                    </div>
+                                    <div style="width: 40px;height: 40px; 
+                                    background-color: rgb(138, 141, 141); 
+                                    text-align: center; display: flex;
+                                    place-content: center; 
+                                    border-radius: 2px;border: 0.5px solid ;">
+                                        <i class="fa fa-plus-circle" style="width: 30px;height: 30px; align-self: center;"></i>
+                                    </div>
                                 </div>
                             </div>
                             <div class="card-body" style="overflow: auto;">
@@ -113,53 +139,52 @@
                     <div class="modal-content">
                         <form action="" method="post" id="formSubmit">
                         <div class="modal-header">
-                            <h5 class="modal-title">Modal title</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body" >
-                            <h4>Thong Tin Nhan Vien</h4>
+                            <h4>Thông tin nhân viên</h4>
                             <div style="display: flex ;">
 
                                 <div class="left" style="width: 100%; text-align: center;">
                                     <i class="fa fa-user-alt-slash" style="width: 90%; height: 8%; padding-bottom: 2px !important;"></i>
-                                    <p>(Vui long chon anh)</p>
+                                    <p>(Vui lòng chọn ảnh)</p>
                                 </div>
                                 <div class="right" >
                                     <div>
-                                        <h3>A. THONG TIN CHUNG</h3>
+                                        <h3>A. Thông Tin Chung</h3>
                                         <div  style="width: 30%;border-bottom:  2px solid blue;"></div>
                                         <div class="row">
 
                                                 <div class="mb-3 col-md-6">
-                                                    <label for="" class="form-label">Ma Nhan Vien (<span style="color: red;">*</span>)</label>
+                                                    <label for="" class="form-label">Mã Nhân Viên (<span style="color: red;">*</span>)</label>
                                                     <input  type="text" class="form-control" name="employeeCode" id="ma" aria-describedby="helpId" placeholder="" >
                                                 </div>
                                                 <div class="mb-3 col-md-6">
-                                                    <label for="" class="form-label">Ho Va Ten (<span style="color: red;">*</span>)</label>
-                                                    <input type="text" class="form-control" name="firstName" id="name" aria-describedby="helpId" placeholder="" >
+                                                    <label for="" class="form-label">Họ và tên (<span style="color: red;">*</span>)</label>
+                                                    <input type="text" class="form-control" name="fullName" id="name" aria-describedby="helpId" placeholder="" >
                                                 </div> 
                                                 <div class="mb-3 col-md-6">
-                                                    <label for="" class="form-label">Ngay Sinh (<span style="color: red;">*</span>)</label>
+                                                    <label for="" class="form-label">Ngày Sinh (<span style="color: red;">*</span>)</label>
                                                     <input type="datetime-local" class="form-control" name="dateOfBirth" id="date" aria-describedby="helpId" placeholder="">
                                                 </div>
                                                 <div class="mb-3 col-md-6">
-                                                    <label for="" class="form-label">Gioi tinh (<span style="color: red;">*</span>)</label>
-                                                    <select class="form-control" name="gender" id="">
-                                                        <option>New Delhi</option>
-                                                        <option>Istanbul</option>
-                                                        <option>Jakarta</option>
+                                                    <label for="" class="form-label"> tính (<span style="color: red;">*</span>)</label>
+                                                    <select class="form-control" name="gender" id="gender">
+                                                        <option value="0">Nam</option>
+                                                        <option value="1">Nữ</option>
+                                                        <option value="2">Khác</option>
                                                     </select>
                                                 </div>
                                                 <div class="mb-3 col-md-6">
-                                                    <label for="" class="form-label">So CMTND/ Can cuoc (<span style="color: red;">*</span>)</label>
-                                                    <input type="text" class="form-control" name="identityNumber" id="" aria-describedby="helpId" placeholder="">
+                                                    <label for="" class="form-label">Số CMTND/ Căn cước (<span style="color: red;">*</span>)</label>
+                                                    <input type="text" class="form-control" name="identityNumber" id="cmtnd" aria-describedby="helpId" placeholder="">
                                                 </div>
                                                 <div class="mb-3 col-md-6">
-                                                    <label for="" class="form-label">Ngay cap (<span style="color: red;">*</span>)</label>
+                                                    <label for="" class="form-label">Ngày Cấp (<span style="color: red;">*</span>)</label>
                                                     <input type="datetime-local" class="form-control" name="identityDate" id="" aria-describedby="helpId" placeholder="">
                                                 </div>
                                                 <div class="mb-3 col-md-6">
-                                                    <label for="" class="form-label">Noi cap (<span style="color: red;">*</span>)</label>
+                                                    <label for="" class="form-label">Nơi Cấp (<span style="color: red;">*</span>)</label>
                                                     <input type="text" class="form-control" name="identityPlace" id="" aria-describedby="helpId" placeholder="">
                                                 </div>
                                                 <div class="mb-3 col-md-6">
@@ -167,11 +192,11 @@
                                                 </div>
                                                 <div class="mb-3 col-md-6">
                                                     <label for="" class="form-label">Email (<span style="color: red;">*</span>)</label>
-                                                    <input type="text" class="form-control" name="email" id="" aria-describedby="helpId" placeholder="">
+                                                    <input type="text" class="form-control" name="email" id="email" aria-describedby="helpId" placeholder="">
                                                 </div>
                                                 <div class="mb-3 col-md-6">
-                                                    <label for="" class="form-label">So dien thoai (<span style="color: red;">*</span>)</label>
-                                                    <input type="text" class="form-control" name="phoneNumber" id="" aria-describedby="helpId" placeholder="">
+                                                    <label for="" class="form-label">Số Điện Thoại (<span style="color: red;">*</span>)</label>
+                                                    <input type="text" class="form-control" name="phoneNumber" id="phone" aria-describedby="helpId" placeholder="">
                                                 </div>
 
                 
@@ -180,41 +205,40 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <h3>A. THONG TIN CONG VIEC</h3>
+                                        <h3>B. Thông Tin Công Việc</h3>
                                         <div  style="width: 30%;border-bottom:  2px solid blue;"></div>
                                         <div class="row">
 
                                             
                                                 <div class="mb-3 col-md-6">
-                                                    <label for="" class="form-label">Vi tri (<span style="color: red;">*</span>)</label>
+                                                    <label for="" class="form-label">Vị trí (<span style="color: red;">*</span>)</label>
                                                     <select class="form-control" name="positionCode" id="">
-                                                        <option>New Delhi</option>
-                                                        <option>Istanbul</option>
-                                                        <option>Jakarta</option>
+                                                        <option>Giám Đốc</option>
+                                                        <option>Tổng Giám Đốc</option>
                                                     </select>
                                                 </div>
                                                 <div class="mb-3 col-md-6">
-                                                    <label for="" class="form-label">Phong ban</label>
+                                                    <label for="" class="form-label">Phòng Ban</label>
                                                     <select class="form-control" name="positionName" id="">
-                                                        <option>New Delhi</option>
-                                                        <option>Istanbul</option>
-                                                        <option>Jakarta</option>
+                                                        <option>Falcon</option>
+                                                        <option>X-team</option>
+                                                        <option>Y-team</option>
                                                     </select>
                                                 </div>
                                                 <div class="mb-3 col-md-6">
-                                                    <label for="" class="form-label">Ma so thue ca nhan (<span style="color: red;">*</span>)</label>
+                                                    <label for="" class="form-label">Mã số thuế cá nhân (<span style="color: red;">*</span>)</label>
                                                     <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
                                                 </div>
                                                 <div class="mb-3 col-md-6">
-                                                    <label for="" class="form-label">Muc luong co ban (<span style="color: red;">*</span>)</label>
-                                                    <input type="text" class="form-control" name="salary" id="" aria-describedby="helpId" placeholder="">
+                                                    <label for="" class="form-label">Mức lương cơ bản (<span style="color: red;">*</span>)</label>
+                                                    <input type="text" class="form-control" name="salary" id="salary" aria-describedby="helpId" placeholder="">
                                                 </div>
                                                 <div class="mb-3 col-md-6">
-                                                    <label for="" class="form-label">Mgay gia nhap coong ty (<span style="color: red;">*</span>)</label>
+                                                    <label for="" class="form-label">Ngày gia nhập công ty (<span style="color: red;">*</span>)</label>
                                                     <input type="datetime-local" class="form-control" name="joinDate" id="" aria-describedby="helpId" placeholder="">
                                                 </div>
                                                 <div class="mb-3 col-md-6">
-                                                    <label for="" class="form-label">Tinh trang cong viec (<span style="color: red;">*</span>)</label>
+                                                    <label for="" class="form-label">Tình trạng công việc (<span style="color: red;">*</span>)</label>
                                                     <select class="form-control" name="workStatus" id="">
                                                         <option>0</option>
                                                         <option>1</option>
@@ -227,9 +251,9 @@
                             </div>
                         </div>
                         <div class="modal-footer" style="background-color: rgb(235, 235, 235);">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: rgb(235, 235, 235); color: black; border: none;" >Huy</button>
-                            <button type="submit" class="btn btn-primary" id="save" style="background-color: #019160; border: none;"><i class="fa fa-save"></i>  Luu</button>
-                            <button type="button" class="btn btn-danger" id="del">Delete</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: rgb(235, 235, 235); color: black; border: none;" >Huỷ</button>
+                            <button type="submit" class="btn btn-primary" id="save" style="background-color: #019160; border: none;"><i class="fa fa-save"></i> <span id="saveText">Lưu</span></button>
+                            <button type="button" class="btn btn-danger" id="del">Xoá</button>
                         </div>
                     </form>
                     </div>
@@ -238,17 +262,29 @@
             
         </div>
 
-        <div id="toast" style="width: 200px;height: 50px; position: fixed; z-index: 100000; background-color: rgb(14, 212, 63); border-radius: 4px; top: 0; right: 5px; display: none;">
-            <p class="p-3" style="color: white;">Xoa Thanh Cong</p>
+        <div id="toast" style="width: 200px;height: 50px; position: fixed; z-index: 100000; background-color: white; box-shadow: 0 3px 6px 0px #000000 ; border-radius: 4px; top: 0; right: 5px; display: none; margin: 0;">
+            <div style="display: flex;align-items:center">
+            <p class="p-3" style="color: #000000;"><i style="color: #019160;" class="fa fa-check-circle"></i><span id="toast1">Xóa Thành Công </span> </p>
+            <i class="fa fa-close" style="margin-left: 60px; margin-bottom: 20px; color: #019160;"></i>
+            </div>
         </div>
+
+
+        <div id="toast2" style="min-width: 200px;height: 50px; position: fixed; z-index: 100000; background-color: white; box-shadow: 0 3px 6px 0px #000000 ; border-radius: 4px; top: 0; right: 5px; display: none; margin: 0;">
+            <div style="display: flex;align-items:center">
+            <p class="p-3" style="color: #000000;"><i style="color: red;" class="fa fa-triangle-exclamation"></i> <span id="toast21">Thất Bại</span> </p>
+            <i class="fa fa-close" style="margin-left: 56px; margin-bottom: 20px;  margin-right:5px;color:  red;"></i>
+            </div>
+        </div>
+
     </main>
       
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
-    <script src="./data.js"></script>
-    <script src="./common.js"></script>
-    <script src="./table.js"></script>
+    <script src="./Js/Data/data.js"></script>
+    <script src="./Js/Common/common.js"></script>
+    <script src="./Js/table/table.js"></script>
     <script>
        
         // class="" id="modelId" tabindex="-1" aria-labelledby="modelTitleId" style="display: block;" ="" role="dialog"

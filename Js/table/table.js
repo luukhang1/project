@@ -15,17 +15,17 @@ class Table{
         let me = this
         me.girdTh.empty(); 
         let tr = $('<tr></tr>');
-        tr.append($('<th></th>').text('EmployeeCode'));
-        tr.append($('<th></th>').text('FullName'));
+        tr.append($('<th style="min-width:100px"></th>').text('Mã nhân viên'));
+        tr.append($('<th></th>').text('Họ tên'));
         tr.append($('<th></th>').text('Email'));
-        tr.append($('<th></th>').text('DateOfBirth'));
-        tr.append($('<th></th>').text('GenderName'));
-        tr.append($('<th></th>').text('PhoneNumber'));
-        tr.append($('<th></th>').text('PositionName'));
-        tr.append($('<th></th>').text('Salary'));
-        tr.append($('<th></th>').text('DepartmentName'));
-        tr.append($('<th></th>').text('WorkStatus'));
-        tr.append($('<th></th>').text('DepartmentCode'));
+        tr.append($('<th></th>').text('Ngày Sinh'));
+        tr.append($('<th></th>').text('Giới tính'));
+        tr.append($('<th></th>').text('Số điện thoại'));
+        tr.append($('<th></th>').text('Vị trí'));
+        tr.append($('<th></th>').text('Lương'));
+        tr.append($('<th></th>').text('Phòng ban'));
+        tr.append($('<th></th>').text('Tình trạng'));
+        tr.append($('<th style="min-width:100px"></th>').text('Mã phòng ban'));
         me.girdTh.append(tr);
     }
 
@@ -59,11 +59,18 @@ class Table{
                 tr.append($('<td></td>').text(me.dataEm[i].WorkStatus));
                 tr.append($('<td></td>').text(me.dataEm[i].DepartmentCode));
                 me.model.find('input').val('');
-                me.model.attr('data-id',me.dataEm[i].EmployeeId);
+                tr.attr('data-id',me.dataEm[i].EmployeeId);
                 tr.click(function(){
+                    $('#del').show();
+                    $('#saveText').text('Lưu');
+                    me.model.attr('data-id',$(this).data('id'));
                     $('#ma').val(me.dataEm[i].EmployeeCode);
                     $('#name').val(me.dataEm[i].FullName);
                     $('#date').val(me.dataEm[i].DateOfBirth);
+                    $('#gender').val(me.dataEm[i].GenderName == 'Nam' ? 0 : 1);
+                    $('#email').val(me.dataEm[i].Email);
+                    $('#phone').val(me.dataEm[i].PhoneNumber);
+                    $('#salary').val(me.dataEm[i].Salary);
                 });
                 me.gird.append(tr);
             }; 
