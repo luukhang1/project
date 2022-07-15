@@ -2,6 +2,7 @@ function addItem() {
     $('#del').hide();
     $('#saveText').text('Thêm');
     $('#modelId').find('input').val('');
+    $('#modelId').removeAttr("data-id");
     setTimeout(function (){
         $('#ma').focus();
     },10);
